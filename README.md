@@ -13,9 +13,42 @@ Este repositorio contiene:
 - Backend: Django + Django REST Framework (API).
 - Frontend: React + TypeScript (Create React App) consumiendo la API.
 
-## Que incluye esta plantilla
+## Preview del frontend (Vercel)
 
-Esta plantilla esta pensada como base para un sistema real. Incluye lo esencial para:
+Puedes desplegar el frontend en Vercel para tener una vista previa.
+
+- URL (Vercel): PENDIENTE (pega aqui tu URL cuando termines el deploy)
+
+Notas:
+
+- Esta preview puede usarse como demo visual.
+- Para que cargue datos reales, el backend debe estar desplegado y accesible por Internet (URL publica).
+
+### Despliegue del frontend en Vercel
+
+1. Sube el repositorio a GitHub.
+2. En Vercel: New Project -> Importa el repo.
+3. Configura:
+   - Framework Preset: Create React App
+   - Root Directory: frontend
+   - Build Command: npm run build
+   - Output Directory: build
+4. Variables de entorno (Project Settings -> Environment Variables):
+   - REACT_APP_API_URL = https://TU_BACKEND_PUBLICO
+5. Deploy.
+
+### Backend (despliegue separado)
+
+Vercel es ideal para el frontend, pero no para un backend Django tradicional en este tipo de proyecto. Para que la app funcione completa en produccion/preview con datos reales, despliega el backend en una plataforma dedicada, por ejemplo:
+
+- Render
+- Railway
+- Fly.io
+- VPS
+
+En produccion se recomienda usar Postgres en lugar de SQLite.
+
+## Que incluye esta plantilla
 
 - Crear y administrar clientes.
 - Registrar deudas por cliente.
@@ -25,12 +58,7 @@ Esta plantilla esta pensada como base para un sistema real. Incluye lo esencial 
 
 ## Capturas (screenshots)
 
-Crea la carpeta `docs/images/` y agrega dos imagenes:
-
-- `docs/images/dashboard.png` (pantalla Dashboard)
-- `docs/images/clientes.png` (pantalla Lista de clientes)
-
-Luego se veran aqui:
+Las capturas estan en `docs/images/`.
 
 ### Dashboard
 
@@ -39,6 +67,10 @@ Luego se veran aqui:
 ### Lista de clientes
 
 ![Clientes](docs/images/clientes.png)
+
+### Informacion de cliente
+
+![Info](docs/images/info.png)
 
 ## Estructura del proyecto
 
@@ -59,7 +91,7 @@ Luego se veran aqui:
 
    backend
 
-2. Crear y activar un entorno virtual (ejemplo en Windows PowerShell):
+2. Crear y activar un entorno virtual (Windows PowerShell):
 
    python -m venv .venv
    .\.venv\Scripts\Activate.ps1
@@ -98,43 +130,18 @@ La web quedara disponible en:
 
 - http://localhost:3000/
 
-Nota: el frontend consume la API en `http://localhost:8000`.
-
 ## Configuracion de la URL del backend
 
-Actualmente la base URL esta escrita en el codigo como `http://localhost:8000`.
+Recomendado: usar variable de entorno.
 
-Para soportar ambientes (local, preview, produccion), se recomienda moverla a una variable de entorno, por ejemplo:
+- En local: crea un archivo `frontend/.env` con:
+  - REACT_APP_API_URL=http://localhost:8000
 
-- `REACT_APP_API_URL=http://localhost:8000`
-
-Y usarla en axios como `process.env.REACT_APP_API_URL`.
-
-## Despliegue (preview) en Vercel
-
-Si, puedes desplegar el frontend en Vercel para tener una preview.
-
-Limitacion importante: Vercel solo desplegara el frontend. El backend de Django debe estar desplegado aparte (por ejemplo en Render, Railway, Fly.io o un VPS). Para que la preview funcione, el frontend debe apuntar a una URL publica del backend.
-
-Pasos (en general):
-
-1. Subir el repositorio a GitHub.
-2. En Vercel: New Project -> Importar el repo.
-3. Configurar:
-   - Root Directory: `frontend`
-   - Build Command: `npm run build`
-   - Output Directory: `build`
-4. Agregar variable de entorno en Vercel:
-   - `REACT_APP_API_URL=https://TU_BACKEND_PUBLICO`
-5. Deploy.
+Luego, en el frontend, usa `process.env.REACT_APP_API_URL` como base URL (si aun no esta aplicado, ajustalo antes del deploy).
 
 ## Base de datos
 
 Por defecto se usa SQLite (archivo `backend/db.sqlite3`). Para produccion se recomienda Postgres.
-
-## Contribuciones
-
-Esta es una plantilla. Puedes extenderla agregando autenticacion, reportes, exportacion, roles y permisos, y mejoras de UI.
 
 ## Licencia
 
