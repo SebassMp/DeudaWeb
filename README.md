@@ -10,9 +10,9 @@ Plantilla para un sistema de registro y control de deudas. Permite gestionar cli
 
 ## Preview (Vercel)
 
-Frontend (preview): PENDIENTE (pega aqui tu URL de Vercel cuando termines el deploy)
+Frontend (preview): Aqui tienes una preview para que mires como es el fronted de esta plantilla sin embargo mas abajo hay imagenes de sus views
 
-- Ejemplo: https://tu-proyecto.vercel.app
+[https://deuda-web.vercel.app/](https://deuda-web.vercel.app/)
 
 Nota: esta preview solo corresponde al frontend. Por lo cual no va a funcionar ninguna funcion ya que solo es para que darte una idea de la parte visual de esta plantilla
 
