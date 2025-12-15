@@ -33,13 +33,6 @@ Esta plantilla esta pensada como base para un sistema real. Incluye lo esencial 
 
 ## Capturas (screenshots)
 
-Crea la carpeta `docs/images/` y agrega dos imagenes:
-
-- `docs/images/dashboard.png` (pantalla Dashboard)
-- `docs/images/clientes.png` (pantalla Lista de clientes)
-
-Luego se veran aqui:
-
 ### Dashboard
 
 ![Dashboard](docs/images/dashboard.png)
