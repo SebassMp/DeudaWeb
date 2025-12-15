@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+
+# Django
+staticfiles/
+media/
+
+# Virtual env
+.venv/
+venv/
+ENV/
+
+# Node / React
+node_modules/
+frontend/node_modules/
+build/
+frontend/build/
+dist/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env files
+.env
+.env.*
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Misc
+*.tmp
+*.swp
