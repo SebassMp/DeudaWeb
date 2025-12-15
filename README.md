@@ -8,47 +8,22 @@
 
 Plantilla para un sistema de registro y control de deudas. Permite gestionar clientes, registrar deudas, registrar abonos/pagos y visualizar un resumen general (dashboard) de la cartera.
 
+## Preview (Vercel)
+
+Frontend (preview): PENDIENTE (pega aqui tu URL de Vercel cuando termines el deploy)
+
+- Ejemplo: https://tu-proyecto.vercel.app
+
+Nota: esta preview solo corresponde al frontend. Por lo cual no va a funcionar ninguna funcion ya que solo es para que darte una idea de la parte visual de esta plantilla
+
 Este repositorio contiene:
 
 - Backend: Django + Django REST Framework (API).
 - Frontend: React + TypeScript (Create React App) consumiendo la API.
 
-## Preview del frontend (Vercel)
-
-Puedes desplegar el frontend en Vercel para tener una vista previa.
-
-- URL (Vercel): PENDIENTE (pega aqui tu URL cuando termines el deploy)
-
-Notas:
-
-- Esta preview puede usarse como demo visual.
-- Para que cargue datos reales, el backend debe estar desplegado y accesible por Internet (URL publica).
-
-### Despliegue del frontend en Vercel
-
-1. Sube el repositorio a GitHub.
-2. En Vercel: New Project -> Importa el repo.
-3. Configura:
-   - Framework Preset: Create React App
-   - Root Directory: frontend
-   - Build Command: npm run build
-   - Output Directory: build
-4. Variables de entorno (Project Settings -> Environment Variables):
-   - REACT_APP_API_URL = https://TU_BACKEND_PUBLICO
-5. Deploy.
-
-### Backend (despliegue separado)
-
-Vercel es ideal para el frontend, pero no para un backend Django tradicional en este tipo de proyecto. Para que la app funcione completa en produccion/preview con datos reales, despliega el backend en una plataforma dedicada, por ejemplo:
-
-- Render
-- Railway
-- Fly.io
-- VPS
-
-En produccion se recomienda usar Postgres en lugar de SQLite.
-
 ## Que incluye esta plantilla
+
+Esta plantilla esta pensada como base para un sistema real. Incluye lo esencial para:
 
 - Crear y administrar clientes.
 - Registrar deudas por cliente.
@@ -58,8 +33,6 @@ En produccion se recomienda usar Postgres en lugar de SQLite.
 
 ## Capturas (screenshots)
 
-Las capturas estan en `docs/images/`.
-
 ### Dashboard
 
 ![Dashboard](docs/images/dashboard.png)
@@ -68,7 +41,7 @@ Las capturas estan en `docs/images/`.
 
 ![Clientes](docs/images/clientes.png)
 
-### Informacion de cliente
+### Informacion de Cliente
 
 ![Info](docs/images/info.png)
 
@@ -91,7 +64,7 @@ Las capturas estan en `docs/images/`.
 
    backend
 
-2. Crear y activar un entorno virtual (Windows PowerShell):
+2. Crear y activar un entorno virtual (ejemplo en Windows PowerShell):
 
    python -m venv .venv
    .\.venv\Scripts\Activate.ps1
@@ -130,19 +103,15 @@ La web quedara disponible en:
 
 - http://localhost:3000/
 
-## Configuracion de la URL del backend
-
-Recomendado: usar variable de entorno.
-
-- En local: crea un archivo `frontend/.env` con:
-  - REACT_APP_API_URL=http://localhost:8000
-
-Luego, en el frontend, usa `process.env.REACT_APP_API_URL` como base URL (si aun no esta aplicado, ajustalo antes del deploy).
 
 ## Base de datos
 
 Por defecto se usa SQLite (archivo `backend/db.sqlite3`). Para produccion se recomienda Postgres.
 
+## Contribuciones
+
+Esta es una plantilla. Puedes extenderla agregando autenticacion, reportes, exportacion, roles y permisos, y mejoras de UI.
+
 ## Licencia
 
-MIT. Ver el archivo LICENSE.
+MIT. Ver el archivo ([LICENSE](https://github.com/SebassMp/DeudaWeb/blob/main/LICENSE)).
